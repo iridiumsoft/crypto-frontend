@@ -7,27 +7,27 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 
 const Routes = [
-  {
-    path: '',
-    loadChildren: './modules/login.module#LoginModule',
-  },
-  {
-    path: 'dashboard',
-    loadChildren: './modules/member.module#MemberModule'
-  }
+    {
+        path: '',
+        loadChildren: './modules/login.module#LoginModule',
+    },
+    {
+        path: 'dashboard',
+        loadChildren: './modules/member.module#MemberModule'
+    }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpModule,
-    SharedModule,
-    RouterModule.forRoot(Routes)
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        SharedModule,
+        RouterModule.forRoot(Routes)
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

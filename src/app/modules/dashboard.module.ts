@@ -5,18 +5,18 @@ import {DashboardComponent} from '../componenets/dashboard/dashboard.component';
 import {SharedModule} from './shared.module';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-  ],
-  imports: [
-    SharedModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: DashboardComponent,
-      }
-    ])
-  ]
+    declarations: [
+        DashboardComponent,
+    ],
+    imports: [
+        SharedModule,
+        RouterModule.forChild([
+            {
+                path: '',
+                component: DashboardComponent,
+            }
+        ])
+    ]
 })
 
 export class DashboardModule {

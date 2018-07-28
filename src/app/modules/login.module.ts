@@ -10,42 +10,42 @@ import {NonMemberComponent} from '../componenets/non-member/non-member.component
 import {SharedModule} from './shared.module';
 
 @NgModule({
-  declarations: [
-    NonMemberComponent,
-    // Components to be used
-    LoginComponent,
-    ForgotComponent,
-    LogoutComponent,
-    RegisterdComponent,
-    ResetPasswordComponent,
-  ],
-  imports: [
-    SharedModule,
-    // Modules to be should
-    RouterModule.forChild([
-      {
-        path: '',
-        component: NonMemberComponent,
-        children: [
-          {
-            path: '',
-            component: LoginComponent,
-          },
-          {
-            path: 'login',
-            component: LoginComponent,
-          }, {
-            path: 'forgot',
-            component: ForgotComponent,
-          },
-          {
-            path: 'reset-password',
-            component: ResetPasswordComponent,
-          }
-        ]
-      },
-    ])
-  ]
+    declarations: [
+        NonMemberComponent,
+        // Components to be used
+        LoginComponent,
+        ForgotComponent,
+        LogoutComponent,
+        RegisterdComponent,
+        ResetPasswordComponent,
+    ],
+    imports: [
+        SharedModule,
+        // Modules to be should
+        RouterModule.forChild([
+            {
+                path: '',
+                component: NonMemberComponent,
+                children: [
+                    {
+                        path: '',
+                        component: LoginComponent,
+                    },
+                    {
+                        path: 'login',
+                        component: LoginComponent,
+                    }, {
+                        path: 'forgot',
+                        component: ForgotComponent,
+                    },
+                    {
+                        path: 'reset-password',
+                        component: ResetPasswordComponent,
+                    }
+                ]
+            },
+        ])
+    ]
 })
 
 export class LoginModule {
