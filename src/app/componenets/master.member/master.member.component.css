@@ -1,0 +1,18 @@
+.vertical-layout.vertical-menu.menu-expanded .navbar .navbar-header{
+  width: 212px;
+}
+.vertical-layout.vertical-menu.menu-expanded .main-menu{
+  width: 212px;
+}
+.vertical-layout.vertical-menu.menu-expanded .content, .vertical-layout.vertical-menu.menu-expanded .footer{
+  margin-left: 195px;
+}
+.navbar-collapse{
+  background-color: white
+ }
+
+@media (max-width: 414px){
+  .vertical-layout.vertical-menu.menu-expanded .content, .vertical-layout.vertical-menu.menu-expanded .footer{
+    margin-left: 0;
+  }
+}
