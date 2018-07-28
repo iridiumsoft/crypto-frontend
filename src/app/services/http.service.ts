@@ -10,15 +10,16 @@ export class HttpService {
     constructor(private http: HttpClient) {
     }
 
-    get (method) {
+    get (method: string) {
         return this.http.get(this.url + method)
     }
 
-    post(method, data) {
+    post(method: string, data) {
+        console.error(this.url + method);
         return this.http.post(this.url + method, data)
     }
 
-    put(method, data) {
+    put(method: string, data) {
         return this.http.put(this.url + method, data)
     }
 

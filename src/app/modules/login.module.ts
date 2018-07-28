@@ -4,7 +4,6 @@ import {RouterModule} from '@angular/router';
 import {ForgotComponent} from '../componenets/forgot/forgot.component';
 import {LoginComponent} from '../componenets/login/login.component';
 import {RegisterdComponent} from '../componenets/registerd/registerd.component';
-import {LogoutComponent} from '../componenets/logout/logout.component';
 import {ResetPasswordComponent} from '../componenets/reset.password/reset.password.component';
 import {NonMemberComponent} from '../componenets/non-member/non-member.component';
 import {SharedModule} from './shared.module';
@@ -15,7 +14,6 @@ import {SharedModule} from './shared.module';
         // Components to be used
         LoginComponent,
         ForgotComponent,
-        LogoutComponent,
         RegisterdComponent,
         ResetPasswordComponent,
     ],
