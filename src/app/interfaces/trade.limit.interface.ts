@@ -1,0 +1,1 @@
+export interface TradeLimit {    trade_limit: number    max_amount: number    min_amount: number    max: number}

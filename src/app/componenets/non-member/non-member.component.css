@@ -1,3 +1,7 @@
 .vertical-layout.vertical-menu.menu-expanded .content, .vertical-layout.vertical-menu.menu-expanded .footer {
-  margin-left: 0;
+    margin-left: 0;
+}
+
+.box-wrapper {
+    max-width: 430px;
 }

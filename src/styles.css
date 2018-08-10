@@ -5,3 +5,17 @@
 .mt-10 {
     margin-top: 10px;
 }
+
+.dropdown-user .dropdown-toggle::after {
+    content: '\f271' !important;
+    font-size: 18px;
+    top: 5px;
+}
+
+.padder {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 25px;
+}

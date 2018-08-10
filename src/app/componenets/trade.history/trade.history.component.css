@@ -1,16 +1,12 @@
-.card-title{
-  font-size: 35px;
+.btn {
+    height: 40px;
+    font-size: 12.55px;
 }
-.bttn{
 
+#sortby {
+    font-size: 2px;
 }
-.btn{
-  height: 40px;
-  font-size: 12.55px;
-}
-#sortby{
-  font-size: 2px;
-}
-select.form-control:not([size]):not([multiple]).input-lg, input.form-control.input-lg{
-  font-size: 14px;
+
+select.form-control:not([size]):not([multiple]).input-lg, input.form-control.input-lg {
+    font-size: 14px;
 }

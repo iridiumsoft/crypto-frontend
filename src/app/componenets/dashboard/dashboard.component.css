@@ -1,66 +1,113 @@
 #padding0 {
-  padding: 12px;
-  margin-top: 3.88px;
+    padding: 12px;
+    margin-top: 3.88px;
 }
 
 #padding1 {
-  padding: 0 30px 0 20px;
-  border-left: 1px solid lightgrey;
+    padding: 0 30px 0 20px;
+    border-left: 1px solid lightgrey;
 }
 
 select.form-control:not([size]):not([multiple]).input-lg, input.form-control.input-lg {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .title2 {
-  font-size: 16px;
-  margin-left: -10px;
+    font-size: 16px;
+    margin-left: -10px;
 }
-.card-title[_ngcontent-c2] {
-  font-size: 13px;
+
+.card-title {
+    font-size: 18px;
 }
 
 .btn {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 .btn-primary {
-  font-size: 11px;
+    font-size: 11px;
 }
 
 select.form-control:not([size]):not([multiple]) {
-  height: 34px;
+    height: 34px;
 }
 
 .titlee {
-  font-size: 1px;
+    font-size: 1px;
 }
-.amount{
-  margin-bottom: 20px;
+
+.amount {
+    margin-bottom: 20px;
 }
+
 .amount p {
-  font-size: 12px;
-  margin-bottom: 0;
+    font-size: 12px;
+    margin-bottom: 0;
 }
-#paddin2{
-  padding: 31px 0px 13px 20px;
-  font-size: 15px;
+
+#paddin2 {
+    padding: 27px 0 13px 20px;
+    font-size: 15px;
 
 }
+
 .amount h3 {
-  color: red;
+    font-size: 16px;
+    color: red;
 }
 
 .navbar .navbar-header {
-  float: left;
-  width: 208px !important;
+    float: left;
+    width: 208px !important;
 
 }
 
 .vertical-layout.vertical-menu.menu-expanded .navbar .navbar-container {
-  width: 209px !important;
+    width: 209px !important;
 }
 
 .vertical-layout.vertical-menu.menu-expanded .content, .vertical-layout.vertical-menu.menu-expanded .footer {
-  margin-left: 247px !important;
+    margin-left: 247px !important;
+}
+
+/*Chart*/
+.circle-chart {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.circle-chart .layer1 {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 10px solid transparent;
+    border-top-color: #e6e6e6;
+    border-right-color: #e6e6e6;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+
+}
+
+.circle-chart .layer2 {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 10px solid transparent;
+    border-bottom-color: rgb(56, 125, 230);;
+    border-left-color: rgb(56, 125, 230);;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+}
+
+.performance h5 {
+    padding-top: 15px;
+}
+
+.performance .row {
+    margin-bottom: 38px;
+
 }

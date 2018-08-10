@@ -1,0 +1,1 @@
+export interface ProfitTarget {    stop_loss: number    tsl_arm: number    tsl: number    max: number}

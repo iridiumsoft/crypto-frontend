@@ -1,25 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { Orders.HistoryComponent } from './orders.history.component';
+import {TradeHistoryComponent} from './trade.history.component';
+import {HttpService} from "../../services/http.service";
 
-describe('Orders.HistoryComponent', () => {
-  let component: Orders.HistoryComponent;
-  let fixture: ComponentFixture<Orders.HistoryComponent>;
+describe('TradeHistoryComponent', () => {
+    let component: TradeHistoryComponent;
+    let fixture: ComponentFixture<TradeHistoryComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ Orders.HistoryComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            providers: [HttpService],
+            declarations: [TradeHistoryComponent]
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(Orders.HistoryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(TradeHistoryComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

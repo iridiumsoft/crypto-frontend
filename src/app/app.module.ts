@@ -1,18 +1,24 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserModule} from '@angular/platform-browser';
+
 import {SharedModule} from './modules/shared.module';
 
 import {AppComponent} from './app.component';
-import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule} from '@angular/http';
+
+import {LoggedInOnly, NoneMembersOnly} from "./services/guard.service";
+import {HttpService} from "./services/http.service";
 
 const Routes = [
     {
         path: '',
+        canActivate: [NoneMembersOnly],
         loadChildren: './modules/login.module#LoginModule',
     },
     {
         path: 'dashboard',
+        canActivate: [LoggedInOnly],
         loadChildren: './modules/member.module#MemberModule'
     }
 ];
@@ -21,9 +27,10 @@ const Routes = [
     declarations: [
         AppComponent,
     ],
+    providers: [NoneMembersOnly, LoggedInOnly, HttpService],
     imports: [
         BrowserModule,
-        HttpModule,
+        HttpClientModule,
         SharedModule,
         RouterModule.forRoot(Routes)
     ],

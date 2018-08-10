@@ -3,13 +3,13 @@
 </h6>
 <div class="card-content">
     <div class="card-body">
-        <form (submit)="OnClick($event)" class="form-horizontal form-simple" action="index.html" novalidate>
+        <form (submit)="onSubmit()" class="form-horizontal form-simple">
             <fieldset class="form-group position-relative has-icon-left mb-0">
                 <input type="text" class="form-control form-control-lg input-lg" [(ngModel)]="user" name="user"
                        id="user-name" placeholder="Your Username"
                        required>
                 <div class="form-control-position">
-                    <i class="ft-user"></i>
+                    <i class="la la-user"></i>
                 </div>
             </fieldset>
             <br>
@@ -21,21 +21,14 @@
                 </div>
             </fieldset>
             <div class="form-group row">
-                <div class="col-md-6 col-12 text-center text-md-left">
-                    <fieldset>
-                        <input type="checkbox" id="remember-me" class="chk-remember">
-                        <label for="remember-me"> Remember Me</label>
-                    </fieldset>
-                </div>
                 <div class="col-md-6 col-12 text-center text-md-right"><a routerLink="/forgot" class="card-link">Forgot
                     Password?</a></div>
             </div>
-            <button type="button" (click)="onSubmit()" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i>
+            <button type="button" (click)="onSubmit()" class="btn btn-info btn-lg btn-block" [disabled]="loading"><i
+                    class="ft-unlock"></i>
                 Login
             </button>
-
-            <div *ngIf="error" class="alert alert-danger mt-10">{{error}}</div>
+            <div *ngIf="errorMessage" class="alert alert-danger mt-10">{{errorMessage}}</div>
         </form>
     </div>
 </div>
-

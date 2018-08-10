@@ -1,139 +1,143 @@
 <section class="basic-inputs">
-  <div class="row match-height">
-    <div class="col-xl-8">
-      <div class="card">
-        <div class="row">
-          <div class="col-lg-8">
-           <div class="row" id="padding0">
-             <div class="col-lg-6">
-               <h2 class="card-title">PortFolio Profarmance</h2>
-             </div>
-             <div class="col-lg-6">
-               <div class="bttn">
-                 <button class="btn btn-primary">Sell Trade</button>
-                 <button class="btn lobibox-btn-default">All Trade</button>
-               </div>
-             </div>
-           </div>
-          </div>
-          <div class="col-lg-4" id="padding1">
-            <br>
-            <fieldset class="form-group position-relative">
-              <select class="form-control input-lg">
-                <option selected="#">17 jan 17 sep</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </fieldset>
-            <fieldset class="form-group position-relative">
-              <select class="form-control input-lg">
-                <option selected="#">Polonix</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </fieldset>
-            <div class="amount">
-              <p>Total Amount Invested </p>
-               <h3>53,533,123</h3>
+    <div class="row match-height">
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row" id="padding0">
+                            <div class="col-md-7">
+                                <h2 class="card-title">Portfolio Performance</h2>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <div class="bttn">
+                                    <button class="btn btn-primary"
+                                            [ngClass]="{'btn-primary': graphBy=='exchange', 'lobibox-btn-default':graphBy!='exchange'}"
+                                            (click)="changeGraphType('exchange')">Exchange
+                                    </button>
+                                    <button class="btn lobibox-btn-default"
+                                            [ngClass]="{'btn-primary': graphBy!='exchange', 'lobibox-btn-default':graphBy=='exchange'}"
+                                            (click)="changeGraphType('strategy')">
+                                        Strategy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chart" style="height: 303px"></div>
+                    </div>
+                    <div class="col-md-4" id="padding1">
+                        <br>
+                        <div class="form-group position-relative">
+                            <input class="form-control daterange">
+                        </div>
+                        <fieldset class="form-group position-relative">
+                            <select class="form-control input-lg">
+                                <option value="poloneix">Poloniex</option>
+                                <option value="binance">Binance</option>
+                            </select>
+                        </fieldset>
+                        <div class="amount">
+                            <p>Total Amount Invested </p>
+                            <h3>53,533,123</h3>
+                        </div>
+                        <div class="amount">
+                            <p>Total Returns</p>
+                            <h3>53,533,123</h3>
+                        </div>
+                        <div class="amount">
+                            <p>Total Returns %</p>
+                            <h3>50%</h3>
+                        </div>
+                        <div class="amount">
+                            <p>Total Amount Invested Currently on Exchanges</p>
+                            <h3>53,533,123</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="amount">
-              <p>Total Amount</p>
-              <h3>53,533,123</h3>
-            </div>
-            <div class="amount">
-              <p>Total Amount Invested </p>
-              <h3>50%</h3>
-            </div>
-            <div class="amount">
-              <p>Total Amount Invested Exhange</p>
-              <h3>53,533,123</h3>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-xl-4">
-      <div class="card">
-        <div class="card-block">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-7">
-                <h5 class="title2">Summray across Axchnages</h5>
-              </div>
-              <div class="col-lg-5">
-                <fieldset class="form-group">
-                  <select class="form-control input-lg">
-                    <option selected="#">Open Orders</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </fieldset>
-              </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-block" style="height: 374px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h2 class="card-title">Portfolio Performance</h2>
+                            </div>
+                            <div class="col-md-5">
+                                <fieldset class="form-group">
+                                    <select class="form-control input-lg">
+                                        <option value="open">Open Orders</option>
+                                        <option value="open_positions">Open Positions</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="performance">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Binance</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="circle-chart">
+                                        <div class="layer1"></div>
+                                        <div class="layer2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Poloniex</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="circle-chart">
+                                        <div class="layer1"></div>
+                                        <div class="layer2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-lg-6" id="paddin2">
-                <h4>Bitifinex</h4>
-              </div>
-              <div class="col-lg-6" id="paddin2"></div>
-              <div class="col-lg-6" id="paddin2">
-                <h4>Bitifinex</h4>
-              </div>
-              <div class="col-lg-6" id="paddin2"></div>
-              <div class="col-lg-6" id="paddin2">
-                <h4>Bitifinex</h4>
-              </div>
-              <div class="col-lg-6" id="paddin2"></div>
-              <div class="col-lg-6" id="paddin2">
-                <h4>Bitifinex</h4>
-              </div>
-              <div class="col-lg-6" id="paddin2"></div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- Active Orders -->
 
 <div class="row">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-content">
-        <div class="table-responsive">
-          <table class="table table-de mb-0">
-            <thead>
-            <tr>
-              <th>Exchange</th>
-              <th>Strategy</th>
-              <th>Pair</th>
-              <th>Type</th>
-              <th>Data</th>
-              <th>Amount</th>
-              <th>Rate(%)</th>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-content">
+                <div class="table-responsive">
+                    <table class="table table-de mb-0">
+                        <thead>
+                        <tr>
+                            <th>Exchange</th>
+                            <!--<th>Strategy</th>-->
+                            <th>Pair</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Rate(%)</th>
 
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>2018-01-31 06:51:51</td>
-              <td class="success">Buy</td>
-              <td><i class="cc BTC-alt"></i> 0.58647</td>
-              <td><i class="cc BTC-alt"></i> 0.58647</td>
-              <td>11900.12</td>
-              <td>$ 6979.78</td>
-              <td>0.2</td>
-
-            </tr>
-            </tbody>
-          </table>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let order of orders">
+                            <td>{{order.exchange}}</td>
+                            <!--<td class="success"></td>-->
+                            <td><i class="cc BTC-alt"></i>{{order.coin}}</td>
+                            <td>{{order.type}}</td>
+                            <td><i class="cc BTC-alt"></i>{{order.date}}</td>
+                            <td>{{order.amount}}</td>
+                            <td>{{order.rate}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 <!-- Active Orders -->

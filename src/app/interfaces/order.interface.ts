@@ -1,0 +1,1 @@
+export interface Order {    ID: number,    user: string,    exchange: string,    coin: string,    amount: number,    rate: number,    total: number,    order_id: number,    date: Date,    status: number}
