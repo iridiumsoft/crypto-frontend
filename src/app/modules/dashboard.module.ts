@@ -3,6 +3,7 @@ import {RouterModule} from '@angular/router';
 
 import {DashboardComponent} from '../componenets/dashboard/dashboard.component';
 import {SharedModule} from './shared.module';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
     declarations: [
@@ -10,6 +11,7 @@ import {SharedModule} from './shared.module';
     ],
     imports: [
         SharedModule,
+        NgxPaginationModule,
         RouterModule.forChild([
             {
                 path: '',

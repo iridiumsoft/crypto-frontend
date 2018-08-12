@@ -19,3 +19,9 @@
 .card-title {
     font-size: 25px;
 }
+
+.no-record-found {
+    padding: 10px;
+    text-align: center;
+    color: red;
+}

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpService} from '../../services/http.service';
 import {CommonService} from '../../services/common.service';
 
-declare const swal: any
+declare const swal: any;
 
 @Component({
     selector: 'app-setting',

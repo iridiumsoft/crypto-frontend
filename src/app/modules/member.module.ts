@@ -27,6 +27,9 @@ import {SharedModule} from './shared.module';
                         {
                             path: 'setting',
                             loadChildren: './setting.module#SettingModule',
+                        }, {
+                            path: 'account',
+                            loadChildren: './account.module#AccountModule',
                         }
                     ]
                 }]

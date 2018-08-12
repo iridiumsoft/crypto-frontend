@@ -27,7 +27,8 @@
                 <div class="collapse navbar-collapse" id="navbar-mobile">
                     <ul class="nav navbar-nav mr-auto float-left">
                         <li class="nav-item d-none d-md-block">
-                            <a (click)="collapsed=!collapsed" class="nav-link nav-menu-main menu-toggle hidden-xs" routerLink="/dashboard/home">
+                            <a (click)="collapsed=!collapsed" class="nav-link nav-menu-main menu-toggle hidden-xs"
+                               routerLink="/dashboard/home">
                                 <i class="la la-bars"></i>
                             </a>
                         </li>
@@ -57,18 +58,10 @@
         <div class="main-menu-content">
             <div class="main-menu-content">
                 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                    <li [routerLinkActive]="['active']" class="nav-item"><a routerLink="/dashboard/home"><i
-                            class="la la-pie-chart"></i><span
-                            class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
-                    </li>
-                    <li [routerLinkActive]="['active']" class="nav-item"><a routerLink="/dashboard/trade-history">
-                        <i class="la la-table"></i><span class="menu-title" data-i18n="nav.add_on_block_ui.main">Trade History</span></a>
-                    </li>
-                    <li [routerLinkActive]="['active']" class=" nav-item">
-                        <a routerLink="/dashboard/setting">
-                            <i class="la la-gear"></i>
-                            <span class="menu-title" data-i18n="nav.add_on_block_ui.main">Setting</span>
-                        </a>
+                    <li *ngFor="let item of nav" [routerLinkActive]="['active']" class="nav-item"><a
+                            [routerLink]="'/dashboard/'+item.route"><i
+                            [class]="'la la-'+item.icon"></i><span
+                            class="menu-title" data-i18n="nav.dash.main">{{item.title}}</span></a>
                     </li>
                 </ul>
             </div>

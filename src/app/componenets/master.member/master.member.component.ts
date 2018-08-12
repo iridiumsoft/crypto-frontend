@@ -13,6 +13,23 @@ export class MasterMemberComponent implements OnInit {
         last_name: ''
     };
     collapsed = false;
+    nav = [{
+        title: 'Dashboard',
+        route: 'home',
+        icon: 'pie-chart'
+    }, {
+        title: 'Trade History',
+        route: 'trade-history',
+        icon: 'table'
+    }, {
+        title: 'Setting',
+        route: 'setting',
+        icon: 'gear'
+    }, {
+        title: 'Account',
+        route: 'account',
+        icon: 'user'
+    }];
 
     constructor(private router: Router) {
 

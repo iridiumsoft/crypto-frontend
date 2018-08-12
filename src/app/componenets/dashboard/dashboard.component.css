@@ -73,6 +73,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /*Chart*/
 .circle-chart {
+    display: inline-block;
     position: relative;
     width: 60px;
     height: 60px;
@@ -97,8 +98,8 @@ select.form-control:not([size]):not([multiple]) {
     width: 60px;
     height: 60px;
     border: 10px solid transparent;
-    border-bottom-color: rgb(56, 125, 230);;
-    border-left-color: rgb(56, 125, 230);;
+    border-bottom-color: rgb(56, 125, 230);
+    border-left-color: rgb(56, 125, 230);
     transform: rotate(-45deg);
     border-radius: 50%;
 }
@@ -108,6 +109,15 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .performance .row {
-    margin-bottom: 38px;
+    margin-bottom: 18px;
 
+}
+
+.performance h4 {
+    color: rgb(56, 125, 230);
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    right: 19px;
 }
