@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserModule} from '@angular/platform-browser';
@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 
 import {LoggedInOnly, NoneMembersOnly} from "./services/guard.service";
 import {HttpService} from "./services/http.service";
+import {isPlatformBrowser} from "@angular/common";
 
 const Routes = [
     {
@@ -29,12 +30,19 @@ const Routes = [
     ],
     providers: [NoneMembersOnly, LoggedInOnly, HttpService],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({appId: 'crypto-bot'}),
         HttpClientModule,
         SharedModule,
         RouterModule.forRoot(Routes)
     ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
+    constructor(@Inject(PLATFORM_ID) private platformId: Object,
+                @Inject(APP_ID) private appId: string) {
+        const platform = isPlatformBrowser(platformId) ?
+            'in the browser' : 'on the server';
+        console.log(`Running ${platform} with appId=${appId}`);
+    }
 }

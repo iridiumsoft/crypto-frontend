@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://iridiumsoft.org/'
+    apiUrl: 'http://localhost:9512/'
 };
