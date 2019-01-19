@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpService} from "../../services/http.service";
 import {CommonService} from "../../services/common.service";
 
@@ -13,7 +13,7 @@ declare const swal: any;
     styleUrls: ['./dashboard.component.css']
 })
 
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
 
     selectedDate: Array<any> = [];
     portfolio: any = {};
@@ -42,9 +42,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
         this.getOrders();
         this.portfolioPerformance();
+
+
+    }
+
+    ngAfterViewChecked() {
         this.DateRangePicker();
-
-
     }
 
     getOrders() {
@@ -156,7 +159,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
                     'Today': [moment().startOf('day'), moment().endOf('day')],
                     'Yesterday': [moment().subtract(1, 'days').startOf('day'), moment().subtract(1, 'day').endOf('day')],
                     'Last 7 Days': [moment().subtract(7, 'days').startOf('day'), moment().endOf('day')],
-                    'Last 30 Days': [moment().subtract(30, 'days').startOf('day'), moment().endOf('day')],
+                    'Last 30 Days': date,
                     'This Month': [moment().startOf('month').startOf('day'), moment().endOf('month')],
                     'Last Month': [moment().subtract(1, 'month').startOf('month').startOf('day'), moment().subtract(1, 'month').endOf('month').endOf('day')],
                 }
