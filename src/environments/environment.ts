@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:9512/'
+    apiUrl: 'http://localhost:3001/'
 };
 /*
  * In development mode, to ignore zone related error stack frames such as

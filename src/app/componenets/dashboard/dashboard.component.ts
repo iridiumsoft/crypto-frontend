@@ -1,6 +1,6 @@
-import {AfterViewChecked, Component, OnDestroy, OnInit} from '@angular/core';
-import {HttpService} from '../../services/http.service';
-import {CommonService} from '../../services/common.service';
+import {AfterViewChecked, Component, OnDestroy, OnInit} from "@angular/core";
+import {HttpService} from "../../services/http.service";
+import {CommonService} from "../../services/common.service";
 
 declare const Highcharts: any;
 declare const $: any;
@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
   selectedDate: Array<any> = [];
   portfolio: any = {};
   orders: any = [];
+  ordersBitfinex: any = [];
   chart: any;
   loading = true;
   exchange = 'binance';
@@ -40,7 +41,8 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
       });
     });
 
-    this.getOrders();
+    // this.bitfinexHistory();
+    this.bitfinexHistory();
     this.portfolioPerformance();
 
 
@@ -50,18 +52,28 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
     this.DateRangePicker();
   }
 
-  getOrders() {
-
-    this.httpService.get('v1/orders/', {
+  bitfinexHistory() {
+    this.httpService.get('v1/orders/bitfinex-history', {
       page: this.p,
       limit: this.pageSize,
     }).subscribe(res => {
-      this.orders = res['orders'];
+      this.ordersBitfinex = res['orders_bitfinex'];
       this.total = res['total'];
-      this.loading = false;
     });
-
   }
+
+  // getOrders() {
+  //
+  //   this.httpService.get('v1/orders/', {
+  //     page: this.p,
+  //     limit: this.pageSize,
+  //   }).subscribe(res => {
+  //     this.orders = res['orders'];
+  //     this.total = res['total'];
+  //     this.loading = false;
+  //   });
+  //
+  // }
 
   portfolioPerformance() {
     this.httpService.get('v1/dashboard/portfolio-performance/' + this.portfolioType).subscribe(res => {
@@ -72,7 +84,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   onPageChange(p) {
     this.p = p;
-    this.getOrders();
+    this.bitfinexHistory();
   }
 
   initChart(data: any) {
@@ -192,8 +204,8 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   delete(item, index) {
     CommonService.loadFile('https://unpkg.com/sweetalert/dist/sweetalert.min.js');
-    this.httpService.delete('v1/orders/' + item['ID']).subscribe(res => {
-      this.orders.splice(index, 1);
+    this.httpService.delete('v1/orders/' + item).subscribe(res => {
+      this.ordersBitfinex.splice(index, 1);
       swal('Success', 'Deleted Successfully', 'success');
     }, err => {
       swal('Oops!', err.error, 'error');
