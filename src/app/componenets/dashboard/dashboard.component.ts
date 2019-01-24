@@ -1,3 +1,4 @@
+///<reference path="../../services/common.service.ts"/>
 import {AfterViewChecked, Component, OnDestroy, OnInit} from "@angular/core";
 import {HttpService} from "../../services/http.service";
 import {CommonService} from "../../services/common.service";
@@ -17,6 +18,8 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   selectedDate: Array<any> = [];
   portfolio: any = {};
+  investedTotal: any = {};
+  totalReturns: any = {};
   orders: any = [];
   ordersBitfinex: any = [];
   chart: any;
@@ -44,12 +47,18 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
     // this.bitfinexHistory();
     this.bitfinexHistory();
     this.portfolioPerformance();
-
-
+    this.GetChartValues();
   }
 
   ngAfterViewChecked() {
     this.DateRangePicker();
+  }
+
+  GetChartValues() {
+    this.httpService.get('v1/orders/get-chart-values', {}).subscribe(res => {
+      this.investedTotal = res.invested;
+      this.totalReturns = res.totalReturns;
+    });
   }
 
   bitfinexHistory() {
@@ -140,11 +149,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked, OnDestroy {
       series: [{
         name: 'Binance',
         color: '#c0e6a9',
-        data: data['binance']
-      }, {
-        name: 'Poloneix',
-        color: '#387de6',
-        data: data['polo']
+        data: data
       }]
     });
 
